@@ -1,4 +1,4 @@
-# 16-bit RISC Processor Design (SystemVerilog)
+# 16-bit RISC Processor Design
 
 This project presents the design and implementation of a **custom 16-bit RISC processor** developed using **SystemVerilog**. The processor follows a modular, clean instruction set architecture (ISA) and was synthesized and tested on an FPGA platform as part of an academic processor design project.
 
