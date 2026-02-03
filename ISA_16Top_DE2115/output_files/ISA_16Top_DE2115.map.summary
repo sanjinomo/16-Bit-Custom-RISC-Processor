@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Dec 06 20:56:43 2025
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : ISA_16Top_DE2115
+Top-level Entity Name : ISA_16Top_DE2115
+Family : Cyclone IV E
+Total logic elements : 28,800
+    Total combinational functions : 12,400
+    Dedicated logic registers : 16,442
+Total registers : 16442
+Total pins : 79
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

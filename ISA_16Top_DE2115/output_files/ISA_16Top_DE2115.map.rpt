@@ -1,0 +1,464 @@
+Analysis & Synthesis report for ISA_16Top_DE2115
+Sat Dec 06 20:56:44 2025
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Port Connectivity Checks: "seven_seg:h2"
+ 12. Port Connectivity Checks: "ISA_16Top:isacpu|Datapath:dp"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Dec 06 20:56:43 2025       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; ISA_16Top_DE2115                            ;
+; Top-level Entity Name              ; ISA_16Top_DE2115                            ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 28,800                                      ;
+;     Total combinational functions  ; 12,400                                      ;
+;     Dedicated logic registers      ; 16,442                                      ;
+; Total registers                    ; 16442                                       ;
+; Total pins                         ; 79                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; ISA_16Top_DE2115   ; ISA_16Top_DE2115   ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 10          ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 10          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
+;     Processor 7            ;   0.2%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processor 9            ;   0.1%      ;
+;     Processor 10           ;   0.1%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                             ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
+; instruction.hex                  ; yes             ; User Hexadecimal (Intel-Format) File  ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction.hex       ;         ;
+; isa_16top_de2115.sv              ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv   ;         ;
+; isa_16top.sv                     ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top.sv          ;         ;
+; instruction_memory.sv            ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv ;         ;
+; control.sv                       ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/control.sv            ;         ;
+; datapath.sv                      ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv           ;         ;
+; register_file.sv                 ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/register_file.sv      ;         ;
+; alu.sv                           ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/alu.sv                ;         ;
+; data_memory.sv                   ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/data_memory.sv        ;         ;
+; pc.sv                            ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/pc.sv                 ;         ;
+; seven_seg.sv                     ; yes             ; Auto-Found SystemVerilog HDL File     ; D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/seven_seg.sv          ;         ;
++----------------------------------+-----------------+---------------------------------------+-----------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 28,800       ;
+;                                             ;              ;
+; Total combinational functions               ; 12400        ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 11257        ;
+;     -- 3 input functions                    ; 592          ;
+;     -- <=2 input functions                  ; 551          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 12351        ;
+;     -- arithmetic mode                      ; 49           ;
+;                                             ;              ;
+; Total registers                             ; 16442        ;
+;     -- Dedicated logic registers            ; 16442        ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 79           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; KEY[1]~input ;
+; Maximum fan-out                             ; 16442        ;
+; Total fan-out                               ; 97406        ;
+; Average fan-out                             ; 3.36         ;
++---------------------------------------------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                             ; Entity Name        ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------------+--------------+
+; |ISA_16Top_DE2115             ; 12400 (0)           ; 16442 (0)                 ; 0           ; 0            ; 0       ; 0         ; 79   ; 0            ; |ISA_16Top_DE2115                                               ; ISA_16Top_DE2115   ; work         ;
+;    |ISA_16Top:isacpu|         ; 12334 (0)           ; 16442 (0)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu                              ; ISA_16Top          ; work         ;
+;       |Control:ct|            ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Control:ct                   ; Control            ; work         ;
+;       |Datapath:dp|           ; 12277 (97)          ; 16442 (0)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp                  ; Datapath           ; work         ;
+;          |ALU:alu|            ; 90 (90)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|ALU:alu          ; ALU                ; work         ;
+;          |Data_Memory:dm|     ; 12005 (12005)       ; 16384 (16384)             ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|Data_Memory:dm   ; Data_Memory        ; work         ;
+;          |PC:pc|              ; 2 (2)               ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|PC:pc            ; PC                 ; work         ;
+;          |Register_File:rf|   ; 83 (83)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|Register_File:rf ; Register_File      ; work         ;
+;       |Instruction_Memory:im| ; 43 (43)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Instruction_Memory:im        ; Instruction_Memory ; work         ;
+;    |seven_seg:h0|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:h0                                  ; seven_seg          ; work         ;
+;    |seven_seg:h1|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:h1                                  ; seven_seg          ; work         ;
+;    |seven_seg:h2|             ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:h2                                  ; seven_seg          ; work         ;
+;    |seven_seg:hi0|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:hi0                                 ; seven_seg          ; work         ;
+;    |seven_seg:hi1|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:hi1                                 ; seven_seg          ; work         ;
+;    |seven_seg:hi2|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:hi2                                 ; seven_seg          ; work         ;
+;    |seven_seg:hi3|            ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ISA_16Top_DE2115|seven_seg:hi3                                 ; seven_seg          ; work         ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------+--------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                     ;
++---------------------------------------------------------------+----------------------------------------+
+; Register name                                                 ; Reason for Removal                     ;
++---------------------------------------------------------------+----------------------------------------+
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][0]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][1]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][2]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][3]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][4]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][5]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][6]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][7]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][8]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][9]  ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][10] ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][11] ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][12] ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][13] ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][14] ; Stuck at GND due to stuck port data_in ;
+; ISA_16Top:isacpu|Datapath:dp|Register_File:rf|register[0][15] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 16                        ;                                        ;
++---------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 16442 ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 58    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16432 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|PC:pc|currentPC[7]             ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|writeData[10]                  ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|writeData[9]                   ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|Register_File:rf|readData2[7]  ;
+; 8:1                ; 7 bits    ; 35 LEs        ; 14 LEs               ; 21 LEs                 ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|ALU:alu|Mux9                   ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|ALU:alu|Mux6                   ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ISA_16Top_DE2115|ISA_16Top:isacpu|Datapath:dp|Register_File:rf|readData1[14] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "seven_seg:h2"    ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; HEX[3..2] ; Input ; Info     ; Stuck at GND ;
++-----------+-------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ISA_16Top:isacpu|Datapath:dp"                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; zeroFlag ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 79                          ;
+; cycloneiii_ff         ; 16442                       ;
+;     CLR               ; 10                          ;
+;     ENA               ; 16384                       ;
+;     ENA CLR           ; 48                          ;
+; cycloneiii_lcell_comb ; 12410                       ;
+;     arith             ; 49                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 39                          ;
+;     normal            ; 12361                       ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 540                         ;
+;         3 data inputs ; 553                         ;
+;         4 data inputs ; 11257                       ;
+;                       ;                             ;
+; Max LUT depth         ; 21.50                       ;
+; Average LUT depth     ; 12.66                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:43     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Sat Dec 06 20:55:49 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ISA_16Top_DE2115 -c ISA_16Top_DE2115
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Warning (12125): Using design file isa_16top_de2115.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ISA_16Top_DE2115 File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 1
+Info (12127): Elaborating entity "ISA_16Top_DE2115" for the top level hierarchy
+Warning (10034): Output port "LEDR" at isa_16top_de2115.sv(4) has no driver File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+Warning (12125): Using design file isa_16top.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ISA_16Top File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top.sv Line: 1
+Info (12128): Elaborating entity "ISA_16Top" for hierarchy "ISA_16Top:isacpu" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 29
+Warning (12125): Using design file instruction_memory.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Instruction_Memory File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv Line: 1
+Info (12128): Elaborating entity "Instruction_Memory" for hierarchy "ISA_16Top:isacpu|Instruction_Memory:im" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top.sv Line: 19
+Warning (10850): Verilog HDL warning at instruction_memory.sv(13): number of words (22) in memory file does not match the number of elements in the address range [0:1023] File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv Line: 13
+Warning (10030): Net "instruction_Mem.data_a" at instruction_memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv Line: 8
+Warning (10030): Net "instruction_Mem.waddr_a" at instruction_memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv Line: 8
+Warning (10030): Net "instruction_Mem.we_a" at instruction_memory.sv(8) has no driver or initial value, using a default initial value '0' File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/instruction_memory.sv Line: 8
+Warning (12125): Using design file control.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Control File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/control.sv Line: 1
+Info (12128): Elaborating entity "Control" for hierarchy "ISA_16Top:isacpu|Control:ct" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top.sv Line: 36
+Warning (12125): Using design file datapath.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Datapath File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 1
+Info (12128): Elaborating entity "Datapath" for hierarchy "ISA_16Top:isacpu|Datapath:dp" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top.sv Line: 62
+Warning (10036): Verilog HDL or VHDL warning at datapath.sv(24): object "opcode" assigned a value but never read File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 24
+Warning (10036): Verilog HDL or VHDL warning at datapath.sv(25): object "rt" assigned a value but never read File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 25
+Warning (10036): Verilog HDL or VHDL warning at datapath.sv(25): object "rd" assigned a value but never read File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 25
+Warning (12125): Using design file register_file.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Register_File File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/register_file.sv Line: 1
+Info (12128): Elaborating entity "Register_File" for hierarchy "ISA_16Top:isacpu|Datapath:dp|Register_File:rf" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 110
+Warning (12125): Using design file alu.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ALU File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/alu.sv Line: 1
+Info (12128): Elaborating entity "ALU" for hierarchy "ISA_16Top:isacpu|Datapath:dp|ALU:alu" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 125
+Warning (12125): Using design file data_memory.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Data_Memory File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/data_memory.sv Line: 1
+Info (12128): Elaborating entity "Data_Memory" for hierarchy "ISA_16Top:isacpu|Datapath:dp|Data_Memory:dm" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 136
+Warning (12125): Using design file pc.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/pc.sv Line: 1
+Info (12128): Elaborating entity "PC" for hierarchy "ISA_16Top:isacpu|Datapath:dp|PC:pc" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 144
+Warning (12125): Using design file seven_seg.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: seven_seg File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/seven_seg.sv Line: 1
+Info (12128): Elaborating entity "seven_seg" for hierarchy "seven_seg:h0" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 40
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "ISA_16Top:isacpu|Datapath:dp|Data_Memory:dm|data_Mem" is uninferred due to asynchronous read logic File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/data_memory.sv Line: 12
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/db/ISA_16Top_DE2115.ram0_Instruction_Memory_6c21a04c.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 4
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 5
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/output_files/ISA_16Top_DE2115.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 2
+    Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 3
+    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/isa_16top_de2115.sv Line: 3
+Info (21057): Implemented 28911 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 28832 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 51 warnings
+    Info: Peak virtual memory: 5004 megabytes
+    Info: Processing ended: Sat Dec 06 20:56:44 2025
+    Info: Elapsed time: 00:00:55
+    Info: Total CPU time (on all processors): 00:01:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/output_files/ISA_16Top_DE2115.map.smsg.
+
+

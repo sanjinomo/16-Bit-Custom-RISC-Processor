@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at datapath.sv(17): object "PC" differs only in case from object "pc" in the same scope File: D:/Uah_Fpga/ISADesignProject531/try2/ISA_16Top_DE2115/datapath.sv Line: 17

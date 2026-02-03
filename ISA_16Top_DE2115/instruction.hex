@@ -1,0 +1,22 @@
+440A	//ADDI $a0, $zero, 10
+4814	//ADDI $s0, $zero, 20 
+0980	//ADD $s0, $a0, $s0 
+1A40	//SUB $s0, $s0, $a0
+2580	//AND $a0, $a0, $s0 
+3580	//OR $a0, $a0, $s0 
+440F	//ADDI $a0, $zero, 15
+7580	//SLT $a0, $a0, $s0 
+D800	//LUI $s0, 0 
+EA32	//ORI $s0, $s0, 50 
+6804	//SW $s0, 4($zero) 
+5404	//LW $a0, 4($zero) 
+8901	//BEQ $a0, $s0, 1 ;skip next PC 
+4801	//ADDI $s0, $s0, 1
+9101	//BNE $a0, $zero, 1
+FFFF	//HALT
+A012	//J 0x12
+FFFF	//HALT
+B015	//JAL 0x15
+FFFF	//HALT 
+0000	//NOP
+C300	//JR $ra
